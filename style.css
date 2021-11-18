@@ -114,6 +114,94 @@ main{
     font-size: 14px;
 }
 
+.produtos{
+    margin-top: 165px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.produtos-info{
+    width: 310px;
+    margin-left: 7px;
+    border: 1px solid #F5F5F5;
+    margin-bottom: 20px;
+}
+
+.produtos-info figure{
+    background-color: #F5F5F5;
+    text-align: center;
+}
+
+.produtos-info figcaption{
+    display: none;
+}
+
+.produtos-info-descricao{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px 15px;
+}
+
+.produtos-info-descricao div{
+    background-color: #2E245E;
+    padding: 8px;
+    margin-bottom: 15px;
+}
+
+.produtos-info-descricao div span{
+    color: white;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.produtos-info-descricao h2{
+    font-size: 18px;
+    font-weight: 700;
+    color: #333333;
+    margin-bottom: 15px;
+}
+
+.produtos-info-descricao p{
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    color: #828282;
+    margin-bottom: 15px;
+}
+
+.produtos-info-descricao span{
+    font-size: 12px;
+    font-weight: 600;
+    color: #2E245E;
+    margin-bottom: 15px;
+}
+
+.produtos-info-descricao button{
+    border: none;
+    background-color: transparent;
+    font-size: 14px;
+    font-weight: 500;
+    color: #828282;
+    margin-left: -6px;
+    text-decoration-line: underline;
+}
+
+.produtos-info:hover{
+    border: 1px solid #2E245E; 
+}
+
+.produtos-info-descricao button:hover{
+    color: #6B54DE;
+}
+
+.compra .compra-bloco button:hover{
+    color: #6B54DE;
+}
+
+
 /* MEDIA QUERIES */
 
 @media screen and (min-width: 1024px) {
@@ -163,7 +251,12 @@ main{
         padding-top: 20px;
     }
 
-    /* pulei */
+    .produtos{
+        width: 70%;
+        margin-top: 0px;
+        margin-left: 25px;
+        justify-content: flex-start;
+    }
 
     .pesquisa-compra{
         width: 25%;
@@ -194,5 +287,11 @@ main{
         width: 100%;
         padding-bottom: 80px;
         padding-top: 90px;
+    }
+
+    .produtos-info{
+        margin-left: 47px;
+        margin-bottom: 61px;
+        width: 300px;
     }
 }
