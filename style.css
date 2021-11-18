@@ -1,0 +1,198 @@
+body{
+    font-family: 'Inter', sans-serif;
+}
+
+header{
+    background-color: #F5F5F5;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1{
+    font-size: 30px;
+    margin-left: 10px;
+    font-weight: 700;
+}
+
+nav ul{
+    margin-right: 10px;
+}
+
+nav ul li{
+    height: 5px;
+    width: 40px;
+    background-color: #818181;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+nav ul li a{
+    display: none;
+}
+
+main{
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.pesquisa-compra{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 200px;
+}
+
+.pesquisa-compra .pesquisa{
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.pesquisa input{
+    border: none;
+    background-color: #F5F5F5;
+    height: 20px;
+    padding: 10px;
+}
+
+.pesquisa input::placeholder{
+    color: #828282;
+    font-size: 14px;
+}
+
+.pesquisa button{
+    border: none;
+    background-color: #6B54DE;
+    color: white;
+    height: 40px;
+}
+
+.pesquisa-compra .compra{
+    width: 100%;
+    text-align: center;
+
+}
+
+.compra .compra-titulo{
+    background-color: #6B54DE;
+    width: 17em;
+    margin: auto;
+    height: 30px;
+    padding-top: 12px;
+}
+
+.compra .compra-titulo h2{
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.compra .compra-bloco{
+    background-color: #F5F5F5;
+    margin: auto;
+    width: 17em;
+    height: 170px;
+    padding-top: 60px;
+}
+
+.compra .compra-bloco h3{
+    margin-bottom: 15px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.compra .compra-bloco button{
+    border: none;
+    color: #828282;
+    background-color: transparent;
+    font-size: 14px;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (min-width: 1024px) {
+    header h1{
+        margin-left: 95px;
+    }
+
+    nav{
+        margin-right: 40px;
+    }
+
+    nav ul{
+        display: flex;
+        height: 100%;
+        width: 346px;
+        justify-content: space-around;
+    }
+
+    nav ul li{
+        background-color: transparent;
+        margin-top: 0;
+        width: auto;
+        height: auto;
+    }
+
+    nav ul li a{
+        display: block;
+        text-decoration: none;
+        color: #828282;
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    nav ul li a:hover{
+        color: #6B54DE;
+    }
+
+    .todos a{
+        color: #333333;
+        font-weight: 600;
+    }
+
+    main{
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding-top: 20px;
+    }
+
+    /* pulei */
+
+    .pesquisa-compra{
+        width: 25%;
+        margin-left: 10px;
+        margin-right: 40px;
+    }
+
+    .pesquisa-compra .pesquisa{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .pesquisa-compra .pesquisa input{
+        width: 66%;
+    }
+
+    .pesquisa-compra .pesquisa button{
+        width: 33%;
+    }
+
+    .compra .compra-titulo{
+        margin: 0;
+        width: 100%;
+    }
+
+    .compra .compra-bloco{
+        margin: 0;
+        width: 100%;
+        padding-bottom: 80px;
+        padding-top: 90px;
+    }
+}
