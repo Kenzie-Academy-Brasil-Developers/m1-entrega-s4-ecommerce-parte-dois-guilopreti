@@ -1,6 +1,9 @@
 const vitrine = document.querySelector("section")
 console.log(vitrine)
 
+let diminuindoValor = []
+let menosValor = []
+
 for(let i = 0; i < 6; i++){
     let cardInfo = document.createElement("div")
     cardInfo.className = "produtos-info"
@@ -29,6 +32,7 @@ for(let i = 0; i < 6; i++){
 
     let produtoTitulo = document.createElement("h2")
     produtoTitulo.innerText = "Lightweight Jacket"
+    produtoTitulo.classList.add("titulo-compra")
 
     let produtoDescrição = document.createElement("p")
     produtoDescrição.innerText = "Adicione um pouco de energia ao seu garda-roupa de inverno com essa jaqueta vibrante..."
@@ -44,11 +48,19 @@ for(let i = 0; i < 6; i++){
     
     
     adicionarCarrinho.addEventListener('click',function(){
+        document.querySelector(".compra-bloco").style.padding = "21px 0px 29px"
+        document.querySelector(".compra-bloco").style.height = "auto"
         let modf1 = document.getElementById("textCarrinho")
         let modf2 = document.getElementById("buttonCarrinho")
         modf1.style.display = "none"
         modf2.style.display = "none"
 
+        let tiraAviso = document.querySelector(".aviso")
+        tiraAviso.style.display = "none"
+
+        document.querySelector(".quantidade-total").style.display = "block"
+        
+        
         let compraBloco = document.getElementById("carrinho")
         
         let itemComprado = document.createElement("div")
@@ -71,6 +83,30 @@ for(let i = 0; i < 6; i++){
         let botaoCompra = document.createElement("button")
         botaoCompra.type = "button"
         botaoCompra.innerText = "Remover Produto"
+        botaoCompra.addEventListener("click", function(){
+            quants -= 1
+            document.getElementById("quantidadeN").innerText = quants
+            itemComprado.style.display = "none"
+            diminuindoValor.push(preçoCompra.innerText.split(""))
+            for(let j = 0; j < diminuindoValor[0].length; j++){
+                if(diminuindoValor[0][j] !== "R" && diminuindoValor[0][j] !== "$" && diminuindoValor[0][j] !== " "){
+                    menosValor.push(diminuindoValor[0][j])
+                }
+            }
+            preçs -= Number(menosValor.join(""))
+            document.getElementById("totalN").innerText = `R$ ${preçs.toFixed(2)}`
+            menosValor = []
+            diminuindoValor = []
+
+            if(preçs === 0){
+                modf1.style.display = "block"
+                modf2.style.display = "block"
+                modf2.style.margin = "auto"
+                document.querySelector(".quantidade-total").style.display = "none"
+                document.querySelector(".compra-bloco").style.padding = "90px 0px 80px"
+                document.querySelector(".compra-bloco").style.height = "170px"
+            }
+        })
 
         let blocoInfosCompra = document.createElement("div")
         blocoInfosCompra.classList.add("infos-compra")
@@ -110,6 +146,10 @@ for(let i = 0; i < 6; i++){
         itemComprado.appendChild(blocoInfosCompra)
 
         compraBloco.appendChild(itemComprado)
+
+        
+
+
     })
     
 
@@ -121,6 +161,7 @@ for(let i = 0; i < 6; i++){
 
     cardInfo.appendChild(quadroImagem)
     cardInfo.appendChild(quadroDescrição)
+    cardInfo.classList.add("Camisetas")
 
     vitrine.appendChild(cardInfo)
     
@@ -129,6 +170,8 @@ for(let i = 0; i < 6; i++){
         imagem.alt = "Touca Preta"
         legenda.innerText = "Touca Preta"
         produtoTipo.innerText = "Acessórios"
+        cardInfo.classList.add("Acessórios")
+        cardInfo.classList.remove("Camisetas")
         produtoTitulo.innerText = "Black Hat"
         produtoDescrição.innerText = "O gorro Next.js chegou! Esta beldade bordada tem um ajuste confortável que garante que..."
         produtoPreço.innerText = "R$ 100.00"
@@ -137,6 +180,8 @@ for(let i = 0; i < 6; i++){
         imagem.alt = "Máscara Preta"
         legenda.innerText = "Máscara Preta"
         produtoTipo.innerText = "Acessórios"
+        cardInfo.classList.add("Acessórios")
+        cardInfo.classList.remove("Camisetas")
         produtoTitulo.innerText = "Mask"
         produtoDescrição.innerText = "Esta máscara facial durável é feita de duas camadas de tecido tratado e possui presilhas..."
         produtoPreço.innerText = "R$ 40.00"
@@ -196,5 +241,67 @@ for(let i = 0; i < botoesCompra.length; i++){
     })
 }
 
+document.getElementById("acessórios").addEventListener("click", function(){
+    let tiraCamisa = document.querySelectorAll(".Camisetas")
+    for(let i = 0; i < tiraCamisa.length; i++){
+        tiraCamisa[i].style.display = "none"
+    }
+    let colocaAcessório = document.querySelectorAll(".Acessórios")
+    for(let j = 0; j < colocaAcessório.length; j++){
+        colocaAcessório[j].style.display = "block"
+    }
+})
 
+document.getElementById("camisetas").addEventListener("click", function(){
+    let tiraAcessório = document.querySelectorAll(".Acessórios")
+    for(let i = 0; i < tiraAcessório.length; i++){
+        tiraAcessório[i].style.display = "none"
+    }
+    let colocaCamisa = document.querySelectorAll(".Camisetas")
+    for(let j = 0; j < colocaCamisa.length; j++){
+        colocaCamisa[j].style.display = "block"
+    }
+})
+
+document.getElementById("calçados").addEventListener("click", function(){
+    let someTudo = document.querySelectorAll(".produtos-info")
+    for(let i = 0; i < someTudo.length; i++){
+        someTudo[i].style.display = "none"
+    }
+})
+
+document.getElementById("todo").addEventListener("click", function(){
+    let mostraTudo = document.querySelectorAll(".produtos-info")
+    for(let i = 0; i < mostraTudo.length; i++){
+        mostraTudo[i].style.display = "block"
+    }
+})
+
+let titulosTags = document.querySelectorAll(".titulo-compra")
+let titulo = []
+for(let i = 0; i < titulosTags.length; i++){
+    titulo.push(titulosTags[i].innerText)
+}
+
+document.getElementById("pesquisa").addEventListener("click", function(){
+    let txt = document.getElementById("txtPesquisa").value
+    let cards = document.querySelectorAll(".produtos-info")
+    for(let i = 0; i < titulo.length; i++){
+        if(titulo[i].includes(txt)){
+            cards[i].style.display = "block"
+        } else{
+            cards[i].style.display = "none"
+        }
+    }
+})
+
+document.getElementById("buttonCarrinho").addEventListener("click", function(){
+    let modf1 = document.getElementById("textCarrinho")
+    let modf2 = document.getElementById("buttonCarrinho")
+    modf1.style.display = "none"
+    modf2.style.display = "none"
+
+    let aviso = document.querySelector(".aviso")
+    aviso.style.display = "block"
+})
 

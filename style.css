@@ -34,7 +34,7 @@ nav ul li a{
 
 main{
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     width: 100%;
     align-items: center;
     padding-top: 50px;
@@ -115,7 +115,6 @@ main{
 }
 
 .produtos{
-    margin-top: 165px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -201,11 +200,20 @@ main{
     color: #6B54DE;
 }
 
+.aviso{
+    color: #828282;
+    display: none;
+}
+
 
 .quantidade-total{
     color: white;
     background-color: #333333;
     height: 126px;
+    width: 272px;
+    margin: auto;
+    margin-bottom: 20px;
+    display: none;
 }
 
 .quantidade{
@@ -248,7 +256,7 @@ main{
 
 .item-carrinho{
     display: flex;
-    width: 100%;
+    width: 90%;
     padding-left: 20px;
 }
 
@@ -378,5 +386,11 @@ main{
         margin-left: 47px;
         margin-bottom: 61px;
         width: 300px;
+    }
+
+    .quantidade-total{
+        margin: 0px;
+        margin-bottom: 20px;
+        width: auto;
     }
 }

@@ -15,10 +15,10 @@
         <h1>Weartake</h1>
         <nav>
             <ul>
-                <li class="todos"><a href="#1">Todos</a></li>
-                <li><a href="#2">Acessórios</a></li>
-                <li><a href="#3">Calçados</a></li>
-                <li><a href="#4">Camisetas</a></li>
+                <li class="todos" id="todo"><a href="#1">Todos</a></li>
+                <li id="acessórios"><a href="#2">Acessórios</a></li>
+                <li id="calçados"><a href="#3">Calçados</a></li>
+                <li id="camisetas"><a href="#4">Camisetas</a></li>
             </ul>
         </nav>
     </header>
@@ -31,8 +31,8 @@
 
         <section class="pesquisa-compra">
             <div class="pesquisa">
-                <input type="text" placeholder="Digite aqui sua pesquisa">
-                <button type="button">Pesquisar</button>
+                <input type="text" placeholder="Digite aqui sua pesquisa" id="txtPesquisa">
+                <button type="button" id="pesquisa">Pesquisar</button>
             </div>
 
             <div class="compra">
@@ -42,6 +42,7 @@
                 <div class="compra-bloco" id="carrinho">
                     <h3 id="textCarrinho">Carrinho vázio</h3>
                     <button type="button" id="buttonCarrinho">Adicione itens</button>
+                    <p class="aviso">Aperte em "Adicionar ao carrinho" no produto que deseja comprar!</p>
                 </div>
 
                 <div class="quantidade-total">
