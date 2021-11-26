@@ -52,10 +52,15 @@ for(let i = 0; i < 6; i++){
         let compraBloco = document.getElementById("carrinho")
         
         let itemComprado = document.createElement("div")
+        itemComprado.classList.add("item-carrinho")
+
+        let blocoImagemCompra = document.createElement("div")
 
         let imagemCompra = document.createElement("img")
         imagemCompra.src = "imgs2/Men-Jacket-Front-Black__15466 1.jpg"
         imagemCompra.alt = "Jaqueta Preta Masculina"
+
+        blocoImagemCompra.appendChild(imagemCompra)
 
         let tituloCompra = document.createElement("h2")
         tituloCompra.innerText = "Lightweight Jacket"
@@ -66,6 +71,13 @@ for(let i = 0; i < 6; i++){
         let botaoCompra = document.createElement("button")
         botaoCompra.type = "button"
         botaoCompra.innerText = "Remover Produto"
+
+        let blocoInfosCompra = document.createElement("div")
+        blocoInfosCompra.classList.add("infos-compra")
+
+        blocoInfosCompra.appendChild(tituloCompra)
+        blocoInfosCompra.appendChild(preçoCompra)
+        blocoInfosCompra.appendChild(botaoCompra)
 
         if(i === 1){
             imagemCompra.src = "imgs2/Black-Hat.jpg"
@@ -94,10 +106,8 @@ for(let i = 0; i < 6; i++){
             preçoCompra.innerText = "R$ 100.00"
         }
         
-        itemComprado.appendChild(imagemCompra)
-        itemComprado.appendChild(tituloCompra)
-        itemComprado.appendChild(preçoCompra)
-        itemComprado.appendChild(botaoCompra)
+        itemComprado.appendChild(blocoImagemCompra)
+        itemComprado.appendChild(blocoInfosCompra)
 
         compraBloco.appendChild(itemComprado)
     })
